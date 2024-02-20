@@ -3,15 +3,17 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
+		"env:check": "bun run env.ts",
+		"dev": "bun run env:check && next dev",
+		"build": "bun run env:check && next build",
 		"start": "next start",
 		"lint": "biome check --apply src"
 	},
 	"dependencies": {
+		"next": "14.1.0",
 		"react": "^18",
 		"react-dom": "^18",
-		"next": "14.1.0"
+		"zod": "^3.22.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.5.3",
